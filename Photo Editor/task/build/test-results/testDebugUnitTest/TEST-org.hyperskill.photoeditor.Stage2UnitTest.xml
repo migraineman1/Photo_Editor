@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.hyperskill.photoeditor.Stage2UnitTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-10-14T02:15:54" hostname="charles-perry-HP-EliteDesk-800-G6-Desktop-Mini-PC" time="38.799">
+  <properties/>
+  <testcase name="test01_checkImageView" classname="org.hyperskill.photoeditor.Stage2UnitTest" time="22.901"/>
+  <testcase name="test02_checkButtonGallery" classname="org.hyperskill.photoeditor.Stage2UnitTest" time="1.697"/>
+  <testcase name="test03_checkSliderBrightness" classname="org.hyperskill.photoeditor.Stage2UnitTest" time="1.756"/>
+  <testcase name="test04_checkSliderNotCrashing" classname="org.hyperskill.photoeditor.Stage2UnitTest" time="2.125"/>
+  <testcase name="test05_checkDefaultBitmapEdit" classname="org.hyperskill.photoeditor.Stage2UnitTest" time="3.064"/>
+  <testcase name="test06_checkLoadedBitmapEdit" classname="org.hyperskill.photoeditor.Stage2UnitTest" time="2.481"/>
+  <testcase name="test07_checkDefaultBitmapEditExhaustive" classname="org.hyperskill.photoeditor.Stage2UnitTest" time="4.771"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
