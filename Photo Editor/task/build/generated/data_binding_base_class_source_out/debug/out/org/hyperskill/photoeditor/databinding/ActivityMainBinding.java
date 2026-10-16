@@ -33,13 +33,18 @@ public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   public final Slider slBrightness;
 
+  @NonNull
+  public final Slider slContrast;
+
   private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull Button btnGallery,
-      @NonNull Button btnSave, @NonNull ImageView ivPhoto, @NonNull Slider slBrightness) {
+      @NonNull Button btnSave, @NonNull ImageView ivPhoto, @NonNull Slider slBrightness,
+      @NonNull Slider slContrast) {
     this.rootView = rootView;
     this.btnGallery = btnGallery;
     this.btnSave = btnSave;
     this.ivPhoto = ivPhoto;
     this.slBrightness = slBrightness;
+    this.slContrast = slContrast;
   }
 
   @Override
@@ -93,8 +98,14 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.slContrast;
+      Slider slContrast = ViewBindings.findChildViewById(rootView, id);
+      if (slContrast == null) {
+        break missingId;
+      }
+
       return new ActivityMainBinding((ConstraintLayout) rootView, btnGallery, btnSave, ivPhoto,
-          slBrightness);
+          slBrightness, slContrast);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

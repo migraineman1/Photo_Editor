@@ -3362,6 +3362,7 @@ id showTitle
 id sin
 id skipCollapsed
 id slBrightness
+id slContrast
 id slide
 id snackbar_action
 id snackbar_text

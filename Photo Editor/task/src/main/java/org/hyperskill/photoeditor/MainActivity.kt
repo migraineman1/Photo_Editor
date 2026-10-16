@@ -2,29 +2,18 @@ package org.hyperskill.photoeditor
 
 import android.Manifest
 import android.app.Activity
-import android.content.ActivityNotFoundException
 import android.content.ContentValues
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Color
+import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.provider.MediaStore
-import android.view.View
 import android.widget.ImageView
-import androidx.activity.result.ActivityResult
-import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
 import androidx.appcompat.app.AppCompatActivity
-import android.graphics.ImageDecoder
-import android.graphics.drawable.BitmapDrawable
-import android.os.Build
-import android.provider.Settings
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
-import androidx.core.content.PermissionChecker
-import androidx.viewbinding.ViewBinding
 import org.hyperskill.photoeditor.databinding.ActivityMainBinding
 
 private lateinit var binding: ActivityMainBinding
@@ -35,27 +24,50 @@ class MainActivity : AppCompatActivity() {
     lateinit var workingBitmap: Bitmap
     private lateinit var currentImage: ImageView
 
-    fun adjustBrightness(brightness: Int) {
+    fun applyFilters() {
+        val brightness = binding.slBrightness.value.toInt()
+        val contrast = binding.slContrast.value.toInt()
+
         val width = originalBitmap.width
         val height = originalBitmap.height
 
-        for (x in 0 until width) {
-            for (y in 0 until height) {
-                val pixel = originalBitmap.getPixel(x, y)
-                val r = Color.red(pixel) + brightness
-                val g = Color.green(pixel) + brightness
-                val b = Color.blue(pixel) + brightness
+        val pixels = IntArray(width * height)
+        originalBitmap.getPixels(pixels, 0, width, 0, 0, width, height)
 
-                // Clamp the values to be within [0, 255]
-                val newR = r.coerceIn(0, 255)
-                val newG = g.coerceIn(0, 255)
-                val newB = b.coerceIn(0, 255)
+        val brightPixelsR = IntArray(width * height)
+        val brightPixelsG = IntArray(width * height)
+        val brightPixelsB = IntArray(width * height)
 
-                workingBitmap.setPixel(x, y, Color.rgb(newR, newG, newB))
-            }
+        var totalBrightnessSum = 0L
+
+        for (i in 0 until width * height) {
+            val pixel = pixels[i]
+            val r = (Color.red(pixel) + brightness).coerceIn(0, 255)
+            val g = (Color.green(pixel) + brightness).coerceIn(0, 255)
+            val b = (Color.blue(pixel) + brightness).coerceIn(0, 255)
+
+            brightPixelsR[i] = r
+            brightPixelsG[i] = g
+            brightPixelsB[i] = b
+
+            totalBrightnessSum += (r + g + b)
         }
-    }
 
+        val avgBright = (totalBrightnessSum / (width * height * 3)).toInt()
+        val alpha: Double = (255.0 + contrast) / (255.0 - contrast)
+
+        val resultPixels = IntArray(width * height)
+        for (i in 0 until width * height) {
+            val r = (alpha * (brightPixelsR[i] - avgBright) + avgBright).toInt().coerceIn(0, 255)
+            val g = (alpha * (brightPixelsG[i] - avgBright) + avgBright).toInt().coerceIn(0, 255)
+            val b = (alpha * (brightPixelsB[i] - avgBright) + avgBright).toInt().coerceIn(0, 255)
+
+            resultPixels[i] = Color.rgb(r, g, b)
+        }
+
+        workingBitmap.setPixels(resultPixels, 0, width, 0, 0, width, height)
+        currentImage.setImageBitmap(workingBitmap)
+    }
 
     // do not change this function
     fun createBitmap(): Bitmap {
@@ -125,7 +137,7 @@ class MainActivity : AppCompatActivity() {
         binding.ivPhoto.also { currentImage = it }
 
         originalBitmap = createBitmap()
-        workingBitmap = originalBitmap.copy(Bitmap.Config.ARGB_8888, true)
+        workingBitmap = originalBitmap.copy(originalBitmap.config ?: Bitmap.Config.ARGB_8888, true)
         currentImage.setImageBitmap(originalBitmap)
 
         val activityResultLauncher =
@@ -136,7 +148,7 @@ class MainActivity : AppCompatActivity() {
                     @Suppress("DEPRECATION")
                     val loadedBitmap = MediaStore.Images.Media.getBitmap(contentResolver, photoUri)
                     originalBitmap = loadedBitmap.copy(Bitmap.Config.ARGB_8888, true)
-                    workingBitmap = loadedBitmap.copy(Bitmap.Config.ARGB_8888, true)
+                    workingBitmap = originalBitmap.copy(originalBitmap.config ?: Bitmap.Config.ARGB_8888, true)
                     currentImage.setImageBitmap(originalBitmap)
                 }
             }
@@ -146,9 +158,12 @@ class MainActivity : AppCompatActivity() {
             activityResultLauncher.launch(intent)
         }
 
-        binding.slBrightness.addOnChangeListener { _, value, _ ->
-            adjustBrightness(value.toInt())
-            currentImage.setImageBitmap(workingBitmap)
+        binding.slBrightness.addOnChangeListener { _, _, _ ->
+            applyFilters()
+        }
+
+        binding.slContrast.addOnChangeListener { _, _, _ ->
+            applyFilters()
         }
 
         binding.btnSave.setOnClickListener {

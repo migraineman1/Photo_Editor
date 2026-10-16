@@ -10,6 +10,7 @@ id btnGallery
 id btnSave
 id ivPhoto
 id slBrightness
+id slContrast
 layout activity_main
 mipmap ic_launcher
 mipmap ic_launcher_round

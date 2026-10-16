@@ -38,17 +38,26 @@ files:
     visible: true
     learner_created: false
   - name: test/java/org/hyperskill/photoeditor/internals/AbstractUnitTest.kt
+    visible: true
     learner_created: false
   - name: test/java/org/hyperskill/photoeditor/internals/CustomShadowBitmap.kt
+    visible: true
     learner_created: false
   - name: test/java/org/hyperskill/photoeditor/internals/PhotoEditorUnitTest.kt
+    visible: true
     learner_created: false
   - name: test/java/org/hyperskill/photoeditor/Stage2UnitTest.kt
+    visible: true
     learner_created: false
   - name: test/java/org/hyperskill/photoeditor/Stage3UnitTest.kt
+    visible: true
     learner_created: false
   - name: test/java/org/hyperskill/photoeditor/Stage4UnitTest.kt
+    visible: true
     learner_created: false
 feedback_link: https://hyperskill.org/projects/559/stages/3196/implement#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Fri, 16 Oct 2026 22:59:22 UTC"
 record: -1
