@@ -5,6 +5,7 @@
     <color name="colorPrimaryDark">#00574B</color>
     <string name="app_name">Photo Editor</string>
     <string name="gallery">GALLERY</string>
+    <string name="save">SAVE</string>
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
         
         <item name="colorPrimary">@color/colorPrimary</item>

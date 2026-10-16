@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:2:1-22:12
-INJECTED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:2:1-22:12
-INJECTED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:2:1-22:12
-INJECTED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:2:1-22:12
+ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:2:1-27:12
 MERGED from [androidx.databinding:viewbinding:8.7.2] /home/charles-perry/.gradle/caches/8.10/transforms/a52f52968ccf4491f35b2888fb12a8a9/transformed/jetified-viewbinding-8.7.2/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.11.0] /home/charles-perry/.gradle/caches/8.10/transforms/6407676f863267ddf8587b5e27dbeb89/transformed/material-1.11.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/charles-perry/.gradle/caches/8.10/transforms/b97635a75112015e1d404c10141596ed/transformed/constraintlayout-2.0.4/AndroidManifest.xml:2:1-11:12
@@ -54,9 +54,15 @@ MERGED from [androidx.annotation:annotation-experimental:1.4.1] /home/charles-pe
 		INJECTED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:5:5-7:38
+	android:maxSdkVersion
+		ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:7:9-35
+	android:name
+		ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:6:9-65
 application
-ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:4:5-20:19
-INJECTED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:4:5-20:19
+ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:9:5-25:19
+INJECTED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:9:5-25:19
 MERGED from [com.google.android.material:material:1.11.0] /home/charles-perry/.gradle/caches/8.10/transforms/6407676f863267ddf8587b5e27dbeb89/transformed/material-1.11.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] /home/charles-perry/.gradle/caches/8.10/transforms/6407676f863267ddf8587b5e27dbeb89/transformed/material-1.11.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/charles-perry/.gradle/caches/8.10/transforms/b97635a75112015e1d404c10141596ed/transformed/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
@@ -78,33 +84,33 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/charl
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.15.0] /home/charles-perry/.gradle/caches/8.10/transforms/36801170ee855c40c5b7170b931512bc/transformed/core-1.15.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:9:9-35
+		ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:14:9-35
 	android:label
-		ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:7:9-41
+		ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:12:9-41
 	android:roundIcon
-		ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:8:9-54
+		ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:13:9-54
 	android:icon
-		ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:6:9-43
+		ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:11:9-43
 	android:allowBackup
-		ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:5:9-35
+		ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:10:9-35
 	android:theme
-		ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:10:9-40
+		ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:15:9-40
 activity#org.hyperskill.photoeditor.MainActivity
-ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:11:9-19:20
+ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:16:9-24:20
 	android:exported
-		ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:13:13-36
+		ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:18:13-36
 	android:name
-		ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:12:13-41
+		ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:17:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:14:13-18:29
+ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:19:13-23:29
 action#android.intent.action.MAIN
-ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:15:17-69
+ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:20:17-69
 	android:name
-		ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:15:25-66
+		ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:20:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:17:17-77
+ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:22:17-77
 	android:name
-		ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:17:27-74
+		ADDED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml:22:27-74
 uses-sdk
 INJECTED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/src/main/AndroidManifest.xml
