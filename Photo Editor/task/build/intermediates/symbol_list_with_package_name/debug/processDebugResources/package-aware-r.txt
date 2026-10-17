@@ -3083,6 +3083,7 @@ id beginning
 id blocking
 id bottom
 id bounce
+id brightnessText
 id btnGallery
 id btnSave
 id buttonPanel
@@ -3110,6 +3111,7 @@ id container
 id content
 id contentPanel
 id contiguous
+id contrastText
 id coordinator
 id cos
 id counterclockwise
@@ -3174,6 +3176,7 @@ id floating
 id forever
 id fragment_container_view_tag
 id fullscreen_header
+id gammaText
 id ghost_view
 id ghost_view_holder
 id gone
@@ -3332,6 +3335,7 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
+id saturationText
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3363,6 +3367,8 @@ id sin
 id skipCollapsed
 id slBrightness
 id slContrast
+id slGamma
+id slSaturation
 id slide
 id snackbar_action
 id snackbar_text

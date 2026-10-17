@@ -6,11 +6,17 @@ color colorPrimaryDark
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable myexample
+id brightnessText
 id btnGallery
 id btnSave
+id contrastText
+id gammaText
 id ivPhoto
+id saturationText
 id slBrightness
 id slContrast
+id slGamma
+id slSaturation
 layout activity_main
 mipmap ic_launcher
 mipmap ic_launcher_round

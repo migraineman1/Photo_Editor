@@ -15,6 +15,7 @@ import androidx.activity.result.contract.ActivityResultContracts.StartActivityFo
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import org.hyperskill.photoeditor.databinding.ActivityMainBinding
+import kotlin.math.pow
 
 private lateinit var binding: ActivityMainBinding
 
@@ -27,6 +28,8 @@ class MainActivity : AppCompatActivity() {
     fun applyFilters() {
         val brightness = binding.slBrightness.value.toInt()
         val contrast = binding.slContrast.value.toInt()
+        val saturation = binding.slSaturation.value.toInt()
+        val gamma = binding.slGamma.value.toDouble()
 
         val width = originalBitmap.width
         val height = originalBitmap.height
@@ -40,6 +43,7 @@ class MainActivity : AppCompatActivity() {
 
         var totalBrightnessSum = 0L
 
+        // brightness filter
         for (i in 0 until width * height) {
             val pixel = pixels[i]
             val r = (Color.red(pixel) + brightness).coerceIn(0, 255)
@@ -53,14 +57,44 @@ class MainActivity : AppCompatActivity() {
             totalBrightnessSum += (r + g + b)
         }
 
+        // contrast filter
         val avgBright = (totalBrightnessSum / (width * height * 3)).toInt()
-        val alpha: Double = (255.0 + contrast) / (255.0 - contrast)
+        val cAlpha: Double = (255.0 + contrast) / (255.0 - contrast)
 
+        val contrastPixelsR = IntArray(width * height)
+        val contrastPixelsG = IntArray(width * height)
+        val contrastPixelsB = IntArray(width * height)
+
+        for (i in 0 until width * height) {
+            contrastPixelsR[i] = (cAlpha * (brightPixelsR[i] - avgBright) + avgBright).toInt().coerceIn(0, 255)
+            contrastPixelsG[i] = (cAlpha * (brightPixelsG[i] - avgBright) + avgBright).toInt().coerceIn(0, 255)
+            contrastPixelsB[i] = (cAlpha * (brightPixelsB[i] - avgBright) + avgBright).toInt().coerceIn(0, 255)
+        }
+
+        // saturation filter
+        val sAlpha: Double = (255.0 + saturation) / (255.0 - saturation)
+
+        val saturationPixelsR = IntArray(width * height)
+        val saturationPixelsG = IntArray(width * height)
+        val saturationPixelsB = IntArray(width * height)
+
+        for (i in 0 until width * height) {
+            val r = contrastPixelsR[i]
+            val g = contrastPixelsG[i]
+            val b = contrastPixelsB[i]
+            val rgbAvg = (r + g + b) / 3
+
+            saturationPixelsR[i] = (sAlpha * (r - rgbAvg) + rgbAvg).toInt().coerceIn(0, 255)
+            saturationPixelsG[i] = (sAlpha * (g - rgbAvg) + rgbAvg).toInt().coerceIn(0, 255)
+            saturationPixelsB[i] = (sAlpha * (b - rgbAvg) + rgbAvg).toInt().coerceIn(0, 255)
+        }
+
+        // gamma filter
         val resultPixels = IntArray(width * height)
         for (i in 0 until width * height) {
-            val r = (alpha * (brightPixelsR[i] - avgBright) + avgBright).toInt().coerceIn(0, 255)
-            val g = (alpha * (brightPixelsG[i] - avgBright) + avgBright).toInt().coerceIn(0, 255)
-            val b = (alpha * (brightPixelsB[i] - avgBright) + avgBright).toInt().coerceIn(0, 255)
+            val r = (255.0 * (saturationPixelsR[i] / 255.0).pow(gamma)).toInt().coerceIn(0, 255)
+            val g = (255.0 * (saturationPixelsG[i] / 255.0).pow(gamma)).toInt().coerceIn(0, 255)
+            val b = (255.0 * (saturationPixelsB[i] / 255.0).pow(gamma)).toInt().coerceIn(0, 255)
 
             resultPixels[i] = Color.rgb(r, g, b)
         }
@@ -163,6 +197,14 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.slContrast.addOnChangeListener { _, _, _ ->
+            applyFilters()
+        }
+
+        binding.slSaturation.addOnChangeListener { _, _, _ ->
+            applyFilters()
+        }
+
+        binding.slGamma.addOnChangeListener { _, _, _ ->
             applyFilters()
         }
 

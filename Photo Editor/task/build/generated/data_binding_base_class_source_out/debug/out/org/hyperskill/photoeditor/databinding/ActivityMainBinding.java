@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -22,13 +23,25 @@ public final class ActivityMainBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final TextView brightnessText;
+
+  @NonNull
   public final Button btnGallery;
 
   @NonNull
   public final Button btnSave;
 
   @NonNull
+  public final TextView contrastText;
+
+  @NonNull
+  public final TextView gammaText;
+
+  @NonNull
   public final ImageView ivPhoto;
+
+  @NonNull
+  public final TextView saturationText;
 
   @NonNull
   public final Slider slBrightness;
@@ -36,15 +49,29 @@ public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   public final Slider slContrast;
 
-  private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull Button btnGallery,
-      @NonNull Button btnSave, @NonNull ImageView ivPhoto, @NonNull Slider slBrightness,
-      @NonNull Slider slContrast) {
+  @NonNull
+  public final Slider slGamma;
+
+  @NonNull
+  public final Slider slSaturation;
+
+  private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull TextView brightnessText,
+      @NonNull Button btnGallery, @NonNull Button btnSave, @NonNull TextView contrastText,
+      @NonNull TextView gammaText, @NonNull ImageView ivPhoto, @NonNull TextView saturationText,
+      @NonNull Slider slBrightness, @NonNull Slider slContrast, @NonNull Slider slGamma,
+      @NonNull Slider slSaturation) {
     this.rootView = rootView;
+    this.brightnessText = brightnessText;
     this.btnGallery = btnGallery;
     this.btnSave = btnSave;
+    this.contrastText = contrastText;
+    this.gammaText = gammaText;
     this.ivPhoto = ivPhoto;
+    this.saturationText = saturationText;
     this.slBrightness = slBrightness;
     this.slContrast = slContrast;
+    this.slGamma = slGamma;
+    this.slSaturation = slSaturation;
   }
 
   @Override
@@ -74,6 +101,12 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.brightnessText;
+      TextView brightnessText = ViewBindings.findChildViewById(rootView, id);
+      if (brightnessText == null) {
+        break missingId;
+      }
+
       id = R.id.btnGallery;
       Button btnGallery = ViewBindings.findChildViewById(rootView, id);
       if (btnGallery == null) {
@@ -86,9 +119,27 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.contrastText;
+      TextView contrastText = ViewBindings.findChildViewById(rootView, id);
+      if (contrastText == null) {
+        break missingId;
+      }
+
+      id = R.id.gammaText;
+      TextView gammaText = ViewBindings.findChildViewById(rootView, id);
+      if (gammaText == null) {
+        break missingId;
+      }
+
       id = R.id.ivPhoto;
       ImageView ivPhoto = ViewBindings.findChildViewById(rootView, id);
       if (ivPhoto == null) {
+        break missingId;
+      }
+
+      id = R.id.saturationText;
+      TextView saturationText = ViewBindings.findChildViewById(rootView, id);
+      if (saturationText == null) {
         break missingId;
       }
 
@@ -104,8 +155,21 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((ConstraintLayout) rootView, btnGallery, btnSave, ivPhoto,
-          slBrightness, slContrast);
+      id = R.id.slGamma;
+      Slider slGamma = ViewBindings.findChildViewById(rootView, id);
+      if (slGamma == null) {
+        break missingId;
+      }
+
+      id = R.id.slSaturation;
+      Slider slSaturation = ViewBindings.findChildViewById(rootView, id);
+      if (slSaturation == null) {
+        break missingId;
+      }
+
+      return new ActivityMainBinding((ConstraintLayout) rootView, brightnessText, btnGallery,
+          btnSave, contrastText, gammaText, ivPhoto, saturationText, slBrightness, slContrast,
+          slGamma, slSaturation);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

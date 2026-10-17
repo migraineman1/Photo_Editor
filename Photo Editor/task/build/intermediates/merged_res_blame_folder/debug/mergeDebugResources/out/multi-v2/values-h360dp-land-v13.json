@@ -4,7 +4,7 @@
             "outputFile": "org.hyperskill.photoeditor.Photo_Editor-task-mergeDebugResources-30:/values-h360dp-land-v13/values-h360dp-land-v13.xml",
             "map": [
                 {
-                    "source": "/home/charles-perry/.gradle/caches/8.10/transforms/6407676f863267ddf8587b5e27dbeb89/transformed/material-1.11.0/res/values-h360dp-land-v13/values-h360dp-land-v13.xml",
+                    "source": "/home/charles-perry/Downloads/android-studio-quail4-linux (2)/android-studio/bin/caches/8.10/transforms/6407676f863267ddf8587b5e27dbeb89/transformed/material-1.11.0/res/values-h360dp-land-v13/values-h360dp-land-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",
