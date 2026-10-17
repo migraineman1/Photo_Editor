@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.hyperskill.photoeditor.Stage4UnitTestB" tests="9" skipped="6" failures="0" errors="0" timestamp="2026-10-17T15:33:48" hostname="charles-perry-HP-EliteDesk-800-G6-Desktop-Mini-PC" time="9.733">
+  <properties/>
+  <testcase name="test01_checkSliderContrast" classname="org.hyperskill.photoeditor.Stage4UnitTestB" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="test02_checkSliderContrastNotCrashingByDefault" classname="org.hyperskill.photoeditor.Stage4UnitTestB" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="test03_checkContrastOnlyWithHint" classname="org.hyperskill.photoeditor.Stage4UnitTestB" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="test04_checkContrastOnlyWithoutHint" classname="org.hyperskill.photoeditor.Stage4UnitTestB" time="3.294"/>
+  <testcase name="test05_checkBrightnessBeforeContrastWithHint" classname="org.hyperskill.photoeditor.Stage4UnitTestB" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="test06_checkBrightnessBeforeContrastWithoutHint" classname="org.hyperskill.photoeditor.Stage4UnitTestB" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="test07_checkBrightnessBeforeContrastWiderSample" classname="org.hyperskill.photoeditor.Stage4UnitTestB" time="3.251"/>
+  <testcase name="test08_checkContrastBeforeBrightnessWithHint" classname="org.hyperskill.photoeditor.Stage4UnitTestB" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="test09_checkContrastBeforeBrightnessWithoutHint" classname="org.hyperskill.photoeditor.Stage4UnitTestB" time="3.187"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

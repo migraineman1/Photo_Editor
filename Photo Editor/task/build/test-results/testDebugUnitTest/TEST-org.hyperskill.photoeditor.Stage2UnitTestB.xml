@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.hyperskill.photoeditor.Stage2UnitTestB" tests="7" skipped="5" failures="0" errors="0" timestamp="2026-10-17T15:33:08" hostname="charles-perry-HP-EliteDesk-800-G6-Desktop-Mini-PC" time="28.74">
+  <properties/>
+  <testcase name="test01_checkImageView" classname="org.hyperskill.photoeditor.Stage2UnitTestB" time="0.004">
+    <skipped/>
+  </testcase>
+  <testcase name="test02_checkButtonGallery" classname="org.hyperskill.photoeditor.Stage2UnitTestB" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="test03_checkSliderBrightness" classname="org.hyperskill.photoeditor.Stage2UnitTestB" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="test04_checkSliderNotCrashing" classname="org.hyperskill.photoeditor.Stage2UnitTestB" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="test05_checkDefaultBitmapEdit" classname="org.hyperskill.photoeditor.Stage2UnitTestB" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="test06_checkLoadedBitmapEdit" classname="org.hyperskill.photoeditor.Stage2UnitTestB" time="23.423"/>
+  <testcase name="test07_checkDefaultBitmapEditExhaustive" classname="org.hyperskill.photoeditor.Stage2UnitTestB" time="5.309"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,4 +1,0 @@
-org.hyperskill.photoeditor.test.Photo_Editor-task-androidTest-0 /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/build/generated/res/resValues/androidTest/debug
-org.hyperskill.photoeditor.test.Photo_Editor-task-mergeDebugAndroidTestResources-1 /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
-org.hyperskill.photoeditor.test.Photo_Editor-task-mergeDebugAndroidTestResources-2 /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
-org.hyperskill.photoeditor.test.Photo_Editor-task-debugAndroidTest-3 /home/charles-perry/IdeaProjects/Photo Editor1/Photo Editor/task/build/intermediates/merged_res/debugAndroidTest/mergeDebugAndroidTestResources
