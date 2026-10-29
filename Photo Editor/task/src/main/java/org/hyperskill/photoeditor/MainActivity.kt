@@ -1,4 +1,4 @@
-package org.hyperskill.photoeditor
+net.migraineman.photoeditor
 
 import android.Manifest
 import android.app.Activity
